@@ -1,0 +1,200 @@
+<%- include("partials/header.ejs") %>
+
+<style>
+body {
+margin: 0;
+padding: 0;
+
+}
+
+.product-container {
+display: grid;
+grid-template-columns: 50% 50%;
+max-width: 100%;
+margin: 50px auto;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.masonry {
+    padding: 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+img {
+    border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 5px 30px 0 rgb(135, 125, 125);
+}
+img:hover {
+  transform: scale(1.5); /* Adjust the scale factor as needed */
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+
+.product-info {
+    
+padding: 40px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+}
+
+.product-info h1 {
+font-size: 3em;
+margin-bottom: 20px;
+
+}
+
+.product-info .price {
+font-size: 1.7em;
+color: #b12704;
+padding: 0;
+margin: 0;
+
+
+}
+
+
+.size-selector {
+    padding: 18px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+.size-selector label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.sizes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.size-option {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.size-option:hover {
+    background-color: #f0f0f0;
+}
+
+.size-option.selected {
+    background-color: hsl(211, 87%, 58%);
+    color: #fff;
+    border-color: hsl(211, 87%, 58%);
+}
+
+
+.product-info .description {
+font-size: 1.5em;
+line-height: 1.6;
+margin-bottom: 30px;
+}
+
+.product-info .buy-now {
+padding: 15px 30px;
+margin: 2%;
+font-size: 1.6em;
+border-radius: 10px;
+background-color: hsl(211, 87%, 58%);
+color: white;
+border: none;
+cursor: pointer;
+text-transform: uppercase;
+}
+
+.product-info .buy-now:hover {
+background-color:  hsl(211, 84%, 41%);
+}
+
+</style>
+
+
+
+
+
+
+    <div class="product-container">
+        <div class="masonry">
+            <% product.img.forEach(image => { %>
+            <img src='<%= image %>' alt="Product Image">
+            <% }); %>
+        </div>
+        <div class="product-info">
+           
+            <h1><%= product.name %></h1>
+            <p class="price">  MRP <s> ₹<%=product.og_price %></s> ₹<%= product.sell_price %></p>
+
+            <div class="size-selector">
+                <label for="size">Choose a size:</label>
+                <div class="sizes">
+                    <button class="size-option" data-size="XS">XS</button>
+                    <button class="size-option" data-size="S">S</button>
+                    <button class="size-option" data-size="M">M</button>
+                    <button class="size-option" data-size="L">L</button>
+                    <button class="size-option" data-size="XL">XL</button>
+                    <button class="size-option" data-size="XXL">XXL</button>
+                </div>
+            </div>
+
+            <button class="buy-now">Buy Now</button>
+
+            <button class="buy-now"  data-id="<%= product._id %>" onclick="addtoCart(event)">Add to Cart</button>
+
+            <p class="description">
+               <%= product.desc %>
+            </p>
+        </div>
+    </div>
+    <script>
+        const sizeOptions = document.querySelectorAll('.size-option');
+        sizeOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            sizeOptions.forEach(btn => btn.classList.remove('selected'));
+            option.classList.add('selected');
+          });
+        });
+      
+        function addtoCart(event) {
+            console.log("Hello");
+          const productId = event.target.dataset.id;
+          const productName = document.querySelector(`h1`).textContent;
+          const selectedSize = document.querySelector('.size-option.selected').dataset.size;
+          const quantity = 1; // default quantity, you can modify this later
+          const sellPrice = document.querySelector('.price').textContent.match(/\d+/)[0];
+      
+          const cartItem = {
+            id: productId,
+            name: productName,
+            size: selectedSize,
+            quantity: quantity,
+            sellPrice: sellPrice
+          };
+      
+          // Add the cartItem to your cart logic here
+          console.log(cartItem);
+        }
+      </script>
+    
+    
+    
+
+
+
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,285 @@
+
+  .header {
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-bar {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    color: rgba(72, 72, 72, 1);
+    font-weight: 400;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @media (max-width: 991px) {
+    .nav-bar {
+      max-width: 100%;
+    }
+  }
+  .logo {
+    margin: auto 0;
+    font: 52px/1 Volkhov, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .logo {
+      font-size: 40px;
+    }
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px 58px;
+    flex-wrap: wrap;
+    font: 16px Poppins, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .nav-links {
+      max-width: 100%;
+    }
+  }
+  .nav-link {
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .sign-up {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.15);
+    align-self: stretch;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 1;
+    padding: 20px 45px;
+  }
+  @media (max-width: 991px) {
+    .sign-up {
+      padding: 0 20px;
+    }
+  }
+  .main-section {
+    margin-top: 94px;
+    width: 100%;
+  }
+  @media (max-width: 991px) {
+    .main-section {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  .main-content {
+    gap: 20px;
+    display: flex;
+  }
+  @media (max-width: 991px) {
+    .main-content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 33%;
+    margin-left: 0;
+  }
+  @media (max-width: 991px) {
+    .column {
+      width: 100%;
+    }
+  }
+  .promo-box {
+    border-radius: 10px;
+    background-color: rgba(224, 224, 224, 1);
+    box-shadow: 0px 20px 52px rgba(68, 68, 68, 0.04);
+    display: flex;
+    flex-grow: 1;
+    padding: 203px 0 0 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  @media (max-width: 991px) {
+    .promo-box {
+      margin-top: 35px;
+      padding: 100px 0 0 0;
+    }
+  }
+  .promo-image {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+  .column-middle {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 33%;
+    margin-left: 20px;
+  }
+  @media (max-width: 991px) {
+    .column-middle {
+      width: 100%;
+    }
+  }
+  .sale-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    text-align: center;
+  }
+  @media (max-width: 991px) {
+    .sale-content {
+      max-width: 100%;
+      margin-top: 35px;
+    }
+  }
+  .sale-image {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 0;
+    align-self: stretch;
+  }
+  @media (max-width: 991px) {
+    .sale-image {
+      max-width: 100%;
+    }
+  }
+  .ultimate-text {
+    color: rgba(72, 72, 72, 1);
+    font-size: 91px;
+    line-height: 1;
+    letter-spacing: -3.64px;
+    margin-top: 36px;
+  }
+  @media (max-width: 991px) {
+    .ultimate-text {
+      font-size: 40px;
+    }
+  }
+  .sale-text {
+    font-size: 187px;
+    line-height: 1;
+    letter-spacing: -10.29px;
+    border: 1px solid rgba(72, 72, 72, 1);
+  }
+  @media (max-width: 991px) {
+    .sale-text {
+      font-size: 40px;
+    }
+  }
+  .collection-text {
+    color: rgba(72, 72, 72, 1);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .shop-now {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.15);
+    margin-top: 19px;
+    width: 207px;
+    max-width: 100%;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    line-height: 1;
+    padding: 20px 60px;
+  }
+  @media (max-width: 991px) {
+    .shop-now {
+      padding: 0 20px;
+    }
+  }
+  .additional-image {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 20px 52px rgba(68, 68, 68, 0.04);
+    align-self: stretch;
+    margin-top: 37px;
+  }
+  @media (max-width: 991px) {
+    .additional-image {
+      max-width: 100%;
+    }
+  }
+  .column-end {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 33%;
+    margin-left: 20px;
+  }
+  @media (max-width: 991px) {
+    .column-end {
+      width: 100%;
+    }
+  }
+  .info-box {
+    border-radius: 10px;
+    background-color: rgba(224, 224, 224, 1);
+    box-shadow: 0px 20px 52px rgba(68, 68, 68, 0.04);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 100%;
+    padding: 186px 63px 0 63px;
+  }
+  @media (max-width: 991px) {
+    .info-box {
+      margin-top: 35px;
+      padding: 100px 20px 0 20px;
+    }
+  }
+  .info-image {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+
+<header class="header">
+  <nav class="nav-bar">
+    <div class="logo">FASCO</div>
+    <div class="nav-links">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Deals</a>
+      <a href="#" class="nav-link">New Arrivals</a>
+      <a href="#" class="nav-link">Packages</a>
+      <a href="#" class="nav-link">Sign in</a>
+      <a href="#" class="sign-up">Sign Up</a>
+    </div>
+  </nav>
+</header>
+<section class="main-section">
+  <div class="main-content">
+    <article class="column">
+      <div class="promo-box">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/01c521c76aa30fd5153b2af93e92958ac1c4240bc0fd5830a772830a8b03496d?apiKey=c118b5e0cb854056bde9fbeea12d6c34&&apiKey=c118b5e0cb854056bde9fbeea12d6c34" alt="Promotional Image 1" class="promo-image" />
+      </div>
+    </article>
+    <article class="column-middle">
+      <div class="sale-content">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/71a15871eaffc30ae02ee96d1884387bbca406cd0c690018eb7be76cfa6775e7?apiKey=c118b5e0cb854056bde9fbeea12d6c34&&apiKey=c118b5e0cb854056bde9fbeea12d6c34" alt="Sale Banner Image" class="sale-image" />
+        <h1 class="ultimate-text">ULTIMATE</h1>
+        <h2 class="sale-text">SALE</h2>
+        <p class="collection-text">NEW COLLECTION</p>
+        <button class="shop-now">SHOP NOW</button>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4dde73d4e6dcbdf4900b88968c2630222d6c4b59c81717f98ff48261fe7047a0?apiKey=c118b5e0cb854056bde9fbeea12d6c34&&apiKey=c118b5e0cb854056bde9fbeea12d6c34" alt="Additional Sale Image" class="additional-image" />
+      </div>
+    </article>
+    <article class="column-end">
+      <div class="info-box">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c1acc3009232986037e5138100ee61e2fdef2225629437b8ff728839db2d4d5?apiKey=c118b5e0cb854056bde9fbeea12d6c34&&apiKey=c118b5e0cb854056bde9fbeea12d6c34" alt="Informational Image" class="info-image" />
+      </div>
+    </article>
+  </div>
+</section>

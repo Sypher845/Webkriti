@@ -1,0 +1,108 @@
+<%- include("partials/header.ejs") %>
+
+
+<style>
+  .image-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 60vh;
+    margin: 1rem auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 30px rgba(22, 32, 220, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .image-slider .wrapper {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+  }
+
+  .image-slider .wrapper div {
+    width: 100%;
+    flex-shrink: 0;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .image-slider #slider-img-1 {
+    background-image: url("https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/b656a7f4-4688-4997-bb7c-54b78793981e1658752386588-Western-Wear_Desk.jpg");
+  }
+
+  .image-slider #slider-img-2 {
+    background-image: url("https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/9be788ff-39a4-4214-99d0-fc97505aae5a1658752545685-USPA_Desk_Banner.jpg");
+  }
+
+  .image-slider #slider-img-3 {
+    background-image: url("https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/31/4031994d-9092-4aa7-aea1-f52f2ae5194f1654006594976-Activewear_DK.jpg");
+  }
+
+  .image-slider #slider-img-4 {
+    background-image: url("https://images-eu.ssl-images-amazon.com/images/G/31/img21/MA2024/GW/August/Unrec/BAU/201._CB565279235_.jpg");
+  }
+
+  .button-holder {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .button-holder .button {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .button-holder .button.active {
+    background-color: rgba(255, 255, 255, 1);
+  }
+</style>
+
+<div class="image-slider">
+  <div class="wrapper" id="slider-wrapper">
+    <div id="slider-img-1"></div>
+    <div id="slider-img-2"></div>
+    <div id="slider-img-3"></div>
+    <div id="slider-img-4"></div>
+  </div>
+  <div class="button-holder">
+    <span class="button active" onclick="jumpToSlide(0)"></span>
+    <span class="button" onclick="jumpToSlide(1)"></span>
+    <span class="button" onclick="jumpToSlide(2)"></span>
+    <span class="button" onclick="jumpToSlide(3)"></span>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+
+  function jumpToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    const wrapper = document.getElementById('slider-wrapper');
+    wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+    document.querySelectorAll('.button').forEach((button, index) => {
+      button.classList.toggle('active', index === slideIndex);
+    });
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % 4; // 4 slides, loop back to start
+    jumpToSlide(currentSlide);
+  }, 5000); // change slide every 5 seconds
+</script>
+
+
+
+
+<%- include("partials/footer.ejs") %>

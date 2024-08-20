@@ -1,0 +1,75 @@
+<%- include("partials/header.ejs") %>
+<style>
+/* Overall product container */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333; /* Adjust color as needed */
+  margin-bottom: 30px;
+}
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Space products evenly */
+  margin: 20px auto;
+  width: 80%; /* Adjust width as needed */
+}
+
+/* Individual product styling */
+.product {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px; /* Space products */
+  /* width: calc(25% - 20px); Adjust width for single image layout */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center content within product */
+}
+
+/* Product image */
+.product img {
+
+  height: 500px; /* Adjust image height */
+  object-fit: cover; /* Crop or contain image within frame */
+  transition: transform 0.3s ease; /* Add hover effect */
+}
+
+/* Product image hover effect */
+.product img:hover {
+  transform: scale(1.1); /* Zoom on hover */
+}
+
+/* Product title */
+.product h2 {
+  font-size: 25px;
+  margin-top: 10px; /* Space title after image */
+  margin-bottom: 5px;
+}
+
+/* Product details */
+.product p {
+  font-size: 14px;
+  line-height: 1.7; /* Improve readability */
+  margin-bottom: 5px;
+}
+
+
+
+</style>
+
+<h1>Jeans</h1>
+<div class="product-container">
+  <% products.forEach(product => { %>
+    <a href="jeans/product_view/<%= product._id %>" > 
+      <div class="product">
+        <img src="<%= product.img[0] %>" alt="Product Image">
+        <h2><%= product.name %></h2>
+        <p>Sell Price: <%= product.sell_price %></p>
+      </div>
+    </a>
+  <% }); %>
+</div>
+
+ 
+<%- include("partials/footer.ejs") %>
